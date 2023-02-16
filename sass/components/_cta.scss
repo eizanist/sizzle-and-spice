@@ -1,0 +1,11 @@
+.cta {
+    &-form {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    &-input, &-button {
+        padding: 1rem 2rem;
+    }
+}
