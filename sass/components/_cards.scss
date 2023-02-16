@@ -6,17 +6,19 @@
     margin-top: auto;
   }
 
-  &.card-hero {
-    position: relative;
-
-    .card-thumbnail {
+  .card-thumbnail {
       aspect-ratio: 1 / 1;
       line-height: 0;
 
       img {
         height: 100%;
       }
+    }
 
+  &.card-hero {
+    position: relative;
+
+    .card-thumbnail {
       @include respond(sm) {
         aspect-ratio: 2 / 1;
       }
@@ -68,7 +70,9 @@
     }
 
     .card-thumbnail {    
-      flex: 1 0 50%;  
+      flex: 1 0 50%;
+      max-width: 26.8rem;
+        
       img {
         object-fit: cover;
         aspect-ratio: 1 / 1;

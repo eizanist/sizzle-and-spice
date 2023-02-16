@@ -1,382 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sizzle & Spice</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-    <link rel="stylesheet" href="css/style.css" /> 
-  </head>
-  <body>
-    <header class="header">
-      <div
-        class="container center flex align-center justify-between rule-bottom"
-      >
-        <a class="brand" href="#">Sizzle<span>&</span>Spice</a>
 
-        <nav class="nav">
-          <ul class="nav-list nav-menu">
-            <li class="nav-item">
-              <a href="#" class="nav-link active">Home</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sizzle & Spice</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container center flex align-center justify-between rule-bottom">
+      <a class="brand" href="#">Sizzle<span>&</span>Spice</a>
+
+      <nav class="nav">
+        <ul class="nav-list nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link nav-sub" data-target="dropDownRecipes">Recipes</span>
+            <div class="dropdown-menu" id="dropDownRecipes">
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="#" class="dropdown-link">New</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#" class="dropdown-link">Popular</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#" class="dropdown-link">Top 10</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#" class="dropdown-link">Random Recipe</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#" class="dropdown-link">All Recipes</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#subscribe" class="nav-link">Subscribe</a>
+          </li>
+        </ul>
+
+        <div class="nav-button" onclick="toggleNav()">
+          <span class="material-symbols-outlined"> menu </span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container center flex vertical-sm justify-between gap-md">
+      <a href="#" class="card card-hero">
+        <div class="card-thumbnail">
+          <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+            class="card-thumbnail" />
+        </div>
+        <h3 class="card-caption">Title</h3>
+      </a>
+
+      <a href="#" class="card card-hero">
+        <div class="card-thumbnail">
+          <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+            class="card-thumbnail" />
+        </div>
+        <h3 class="card-caption">Title</h3>
+      </a>
+
+      <a href="#" class="card card-hero">
+        <div class="card-thumbnail">
+          <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+            class="card-thumbnail" />
+        </div>
+        <h3 class="card-caption">Title</h3>
+      </a>
+
+      <a href="#" class="card card-hero">
+        <div class="card-thumbnail">
+          <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+            class="card-thumbnail" />
+        </div>
+        <h3 class="card-caption">Title</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- RECIPES SECTION -->
+  <section class="recipes-home">
+    <div class="container center grid gap-md">
+      <div class="grid-cell cell-main">
+        <h3>Latest Recipes</h3>
+
+        <a class="card card-horizontal" href="#">
+          <div class="card-thumbnail">
+            <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..." />
+          </div>
+          <div class="card-body">
+            <h3 class="card-caption">Title</h3>
+            <div class="card-date">5. February 2023</div>
+            <div class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic,
+              ipsum commodi? Dolore vel adipisci ratione ab labore.
+            </div>
+            <div class="card-rating" data-average="4.7"></div>
+          </div>
+        </a>
+
+        <hr class="hr-3" />
+
+        <a class="card card-horizontal" href="#">
+          <div class="card-thumbnail">
+            <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..." />
+          </div>
+          <div class="card-body">
+            <h3 class="card-caption">Title</h3>
+            <div class="card-date">5. February 2023</div>
+            <div class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic,
+              ipsum commodi? Dolore vel adipisci ratione ab labore.
+            </div>
+            <div class="card-rating" data-average="4.7"></div>
+          </div>
+        </a>
+
+        <a href="#" class="btn cell-full text-center mt-3 ml-auto mr-auto">Load more</a>
+      </div>
+
+      <div class="grid-cell cell-sidebar flex vertical">
+        <h3 class="cell-full">Featured</h3>
+        <div>
+          <a class="card card-featured" href="#">
+            <div class="card-thumbnail">
+              <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..." />
+            </div>
+            <div class="card-body">
+              <h3 class="card-caption">This is a Featured Article</h3>
+            </div>
+          </a>
+        </div>
+        <h3 class="cell-full mt-3">Popular This Week</h3>
+        <div class="grid grid-2 gap-md">
+          <a class="card card-vertical" href="#">
+            <div class="card-thumbnail">
+              <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+                class="card-thumbnail" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-caption">Spicy Korean BBQ</h3>
+            </div>
+          </a>
+
+          <a class="card card-vertical" href="#">
+            <div class="card-thumbnail">
+              <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+                class="card-thumbnail" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-caption">Spicy Korean BBQ</h3>
+            </div>
+          </a>
+
+          <a class="card card-vertical" href="#">
+            <div class="card-thumbnail">
+              <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+                class="card-thumbnail" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-caption">Spicy Korean BBQ</h3>
+            </div>
+          </a>
+
+          <a class="card card-vertical" href="#">
+            <div class="card-thumbnail">
+              <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+                class="card-thumbnail" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-caption">Spicy Korean BBQ</h3>
+            </div>
+          </a>
+
+          <a class="card card-vertical" href="#">
+            <div class="card-thumbnail">
+              <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+                class="card-thumbnail" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-caption">Spicy Korean BBQ</h3>
+            </div>
+          </a>
+
+          <a class="card card-vertical" href="#">
+            <div class="card-thumbnail">
+              <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="..."
+                class="card-thumbnail" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-caption">Spicy Korean BBQ</h3>
+            </div>
+          </a>
+
+          <a href="#" class="btn cell-full text-center ml-auto mr-auto">Load more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container center flex vertical-sm align-center gap-md">
+      <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="Avatar" class="avatar" />
+      <div class="about-body flex vertical">
+        <h3 class="about-title">Hi! I'm Jane.</h3>
+        <p class="about-text">
+          Hello there! My name is Jane Doe and I am a passionate home cook and
+          food blogger. I started my blog as a way to document my love for
+          cooking and share my favorite recipes with the world. With a focus
+          on simple, wholesome ingredients and easy-to-follow instructions, my
+          blog is the perfect resource for busy home cooks looking to elevate
+          their meals.
+        </p>
+        <nav class="mt-auto">
+          <ul class="social-nav-list">
+            <li class="social-nav-item">
+              <a href="#" class="about-social-nav-link"><img src="img/facebook-color.png" alt="Facebook"
+                  class="social-nav-icon" /></a>
             </li>
-            <li class="nav-item">
-              <span class="nav-link nav-sub" data-target="dropDownRecipes"
-                >Recipes</span
-              >
-              <div class="dropdown-menu" id="dropDownRecipes">
-                <ul class="dropdown-list">
-                  <li class="dropdown-item">
-                    <a href="#" class="dropdown-link">New</a>
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="#" class="dropdown-link">Popular</a>
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="#" class="dropdown-link">Top 10</a>
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="#" class="dropdown-link">Random Recipe</a>
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="#" class="dropdown-link">All Recipes</a>
-                  </li>
-                </ul>
-              </div>
+            <li class="social-nav-item">
+              <a href="#" class="about-social-nav-link"><img src="img/twitter-color.png" alt="Twitter"
+                  class="social-nav-icon" /></a>
             </li>
-            <li class="nav-item">
-              <a href="#about" class="nav-link">About</a>
+            <li class="social-nav-item">
+              <a href="#" class="about-social-nav-link"><img src="img/instagram-color.png" alt="Pinterest"
+                  class="social-nav-icon" /></a>
             </li>
-            <li class="nav-item">
-              <a href="#subscribe" class="nav-link">Subscribe</a>
+            <li class="social-nav-item">
+              <a href="#" class="about-social-nav-link"><img src="img/pinterest-color.png" alt="Pinterest"
+                  class="social-nav-icon" /></a>
             </li>
           </ul>
-
-          <div class="nav-button" onclick="toggleNav()">
-            <span class="material-symbols-outlined"> menu </span>
-          </div>
         </nav>
       </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="container center flex vertical-sm justify-between gap-md">
-        <a href="#" class="card card-hero">
-          <div class="card-thumbnail">
-            <img
-              src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-              alt="..."
-              class="card-thumbnail"
-            />
-          </div>
-          <h3 class="card-caption">Title</h3>
-        </a>
-
-        <a href="#" class="card card-hero">
-          <div class="card-thumbnail">
-            <img
-              src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-              alt="..."
-              class="card-thumbnail"
-            />
-          </div>
-          <h3 class="card-caption">Title</h3>
-        </a>
-
-        <a href="#" class="card card-hero">
-          <div class="card-thumbnail">
-            <img
-              src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-              alt="..."
-              class="card-thumbnail"
-            />
-          </div>
-          <h3 class="card-caption">Title</h3>
-        </a>
-
-        <a href="#" class="card card-hero">
-          <div class="card-thumbnail">
-            <img
-              src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-              alt="..."
-              class="card-thumbnail"
-            />
-          </div>
-          <h3 class="card-caption">Title</h3>
-        </a>
+      <div class="about-images">
+        <img src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg" alt="Pinterest"
+          class="about-image" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- RECIPES SECTION -->
-    <section class="recipes-home">
-      <div class="container center grid gap-md">
-        <div class="grid-cell cell-main">
-          <h3>Latest Recipes</h3>
+  <section class="cta" id="subscribe">
+    <div class="container center flex vertical text-sm-center align-center">
+      <h3 class="cta-heading">Subscribe for email updates</h3>
+      <p class="cta-text">
+        Subscribe to our newsletter and receive new cooking ideas every day.
+      </p>
+      <form action="#" class="cta-form flex vertical-sm">
+        <input type="email" name="email" id="email" class="cta-input" placeholder="Email" />
+        <input type="submit" value="Subscribe" class="cta-button" />
+      </form>
+    </div>
+  </section>
 
-          <a class="card card-horizontal" href="#">
-            <div class="card-thumbnail">
-              <img
-                src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-                alt="..."
-              />
-            </div>
-            <div class="card-body">
-              <h3 class="card-caption">Title</h3>
-              <div class="card-date">5. February 2023</div>
-              <div class="card-text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic,
-                ipsum commodi? Dolore vel adipisci ratione ab labore.
-              </div>
-              <div class="card-rating" data-average="4.7"></div>
-            </div>
-          </a>
-
-          <hr class="hr-3" />
-
-          <a class="card card-horizontal" href="#">
-            <div class="card-thumbnail">
-              <img
-                src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-                alt="..."
-              />
-            </div>
-            <div class="card-body">
-              <h3 class="card-caption">Title</h3>
-              <div class="card-date">5. February 2023</div>
-              <div class="card-text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic,
-                ipsum commodi? Dolore vel adipisci ratione ab labore.
-              </div>
-              <div class="card-rating" data-average="4.7"></div>
-            </div>
-          </a>
-
-          <a href="#" class="btn cell-full text-center mt-3 ml-auto mr-auto"
-            >Load more</a
-          >
+  <footer class="footer">
+    <div class="container center flex vertical-sm justify-between">
+      <div class="footer-copy flex" style="gap: 4px">
+        <p>&copy;</p>
+        <p>2023 Sizzle & Spice. <br />All Rights Reserved</p>
+      </div>
+      <div class="footer-links flex gap-lg vertical-sm">
+        <div class="footer-links-col flex vertical">
+          <h3 class="footer-links-heading">Category</h3>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
         </div>
 
-        <div class="grid-cell cell-sidebar flex vertical">
-          <h3 class="cell-full">Featured</h3>
-          <div>
-            <a class="card card-featured" href="#">
-              <img
-                src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-                alt="..."
-                class="card-thumbnail"
-              />
-              <div class="card-body">
-                <h3 class="card-caption">This is a Featured Article</h3>
-              </div>
-            </a>
-          </div>
-          <h3 class="cell-full mt-3">Popular This Week</h3>
-          <div class="grid grid-2 gap-md">
-            <a class="card card-vertical" href="#">
-              <img
-                src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-                alt="..."
-                class="card-thumbnail"
-              />
-              <div class="card-body">
-                <h3 class="card-caption">Spicy Korean BBQ</h3>
-              </div>
-            </a>
+        <div class="footer-links-col flex vertical">
+          <h3 class="footer-links-heading">Category</h3>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+        </div>
 
-            <a class="card card-vertical" href="#">
-              <img
-                src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-                alt="..."
-                class="card-thumbnail"
-              />
-              <div class="card-body">
-                <h3 class="card-caption">Creamy Tomato Soup</h3>
-              </div>
-            </a>
-
-            <a class="card card-vertical" href="#">
-              <img
-                src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-                alt="..."
-                class="card-thumbnail"
-              />
-              <div class="card-body">
-                <h3 class="card-caption">Classic Beef Lasagna</h3>
-              </div>
-            </a>
-
-            <a class="card card-vertical" href="#">
-              <img
-                src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-                alt="..."
-                class="card-thumbnail"
-              />
-              <div class="card-body">
-                <h3 class="card-caption">
-                  Black Bean and Sweet Potato Enchiladas
-                </h3>
-              </div>
-            </a>
-
-            <a class="card card-vertical" href="#">
-              <img
-                src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-                alt="..."
-                class="card-thumbnail"
-              />
-              <div class="card-body">
-                <h3 class="card-caption">Spicy Shrimp Tacos</h3>
-              </div>
-            </a>
-
-            <a class="card card-vertical" href="#">
-              <img
-                src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-                alt="..."
-                class="card-thumbnail"
-              />
-              <div class="card-body">
-                <h3 class="card-caption">Chocolate Chip Cookies</h3>
-              </div>
-            </a>
-
-            <a href="#" class="btn cell-full text-center ml-auto mr-auto"
-              >Load more</a
-            >
-          </div>
+        <div class="footer-links-col flex vertical">
+          <h3 class="footer-links-heading">Category</h3>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
+          <a href="#" class="footer-link">Link</a>
         </div>
       </div>
-    </section>
+    </div>
+  </footer>
 
-    <section class="about" id="about">
-      <div class="container center flex vertical-sm align-center gap-md">
-        <img
-          src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-          alt="Avatar"
-          class="avatar"
-        />
-        <div class="about-body flex vertical">
-          <h3 class="about-title">Hi! I'm Jane.</h3>
-          <p class="about-text">
-            Hello there! My name is Jane Doe and I am a passionate home cook and
-            food blogger. I started my blog as a way to document my love for
-            cooking and share my favorite recipes with the world. With a focus
-            on simple, wholesome ingredients and easy-to-follow instructions, my
-            blog is the perfect resource for busy home cooks looking to elevate
-            their meals.
-          </p>
-          <nav class="mt-auto">
-            <ul class="social-nav-list">
-              <li class="social-nav-item">
-                <a href="#" class="about-social-nav-link"
-                  ><img
-                    src="img/facebook-color.png"
-                    alt="Facebook"
-                    class="social-nav-icon"
-                /></a>
-              </li>
-              <li class="social-nav-item">
-                <a href="#" class="about-social-nav-link"
-                  ><img
-                    src="img/twitter-color.png"
-                    alt="Twitter"
-                    class="social-nav-icon"
-                /></a>
-              </li>
-              <li class="social-nav-item">
-                <a href="#" class="about-social-nav-link"
-                  ><img
-                    src="img/instagram-color.png"
-                    alt="Pinterest"
-                    class="social-nav-icon"
-                /></a>
-              </li>
-              <li class="social-nav-item">
-                <a href="#" class="about-social-nav-link"
-                  ><img
-                    src="img/pinterest-color.png"
-                    alt="Pinterest"
-                    class="social-nav-icon"
-                /></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="about-images">
-          <img
-            src="https://cdn.pixabay.com/photo/2016/12/07/15/57/blur-1889747_1280.jpg"
-            alt="Pinterest"
-            class="about-image"
-          />
-        </div>
-      </div>
-    </section>
+  <script src="js/rating.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
 
-    <section class="cta" id="subscribe">
-      <div class="container center flex vertical text-sm-center align-center">
-        <h3 class="cta-heading">Subscribe for email updates</h3>
-        <p class="cta-text">
-          Subscribe to our newsletter and receive new cooking ideas every day.
-        </p>
-        <form action="#" class="cta-form flex vertical-sm">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            class="cta-input"
-            placeholder="Email"
-          />
-          <input type="submit" value="Subscribe" class="cta-button" />
-        </form>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container center flex vertical-sm justify-between">
-        <div class="footer-copy flex" style="gap: 4px">
-          <p>&copy;</p>
-          <p>2023 Sizzle & Spice. <br />All Rights Reserved</p>
-        </div>
-        <div class="footer-links flex gap-lg vertical-sm">
-          <div class="footer-links-col flex vertical">
-            <h3 class="footer-links-heading">Category</h3>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-          </div>
-
-          <div class="footer-links-col flex vertical">
-            <h3 class="footer-links-heading">Category</h3>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-          </div>
-
-          <div class="footer-links-col flex vertical">
-            <h3 class="footer-links-heading">Category</h3>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-            <a href="#" class="footer-link">Link</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="js/rating.js"></script>
-    <script src="js/navigation.js"></script>
-  </body>
 </html>

@@ -709,16 +709,17 @@ section, footer {
   justify-content: flex-end;
   margin-top: auto; }
 
+.card .card-thumbnail {
+  aspect-ratio: 1 / 1;
+  line-height: 0; }
+  .card .card-thumbnail img {
+    height: 100%; }
+
 .card.card-hero {
   position: relative; }
-  .card.card-hero .card-thumbnail {
-    aspect-ratio: 1 / 1;
-    line-height: 0; }
-    .card.card-hero .card-thumbnail img {
-      height: 100%; }
-    @media (max-width: 37.5em) {
-      .card.card-hero .card-thumbnail {
-        aspect-ratio: 2 / 1; } }
+  @media (max-width: 37.5em) {
+    .card.card-hero .card-thumbnail {
+      aspect-ratio: 2 / 1; } }
   .card.card-hero .card-caption {
     position: absolute;
     bottom: 0;
@@ -752,7 +753,8 @@ section, footer {
     margin-top: -1rem;
     margin-bottom: 1rem; }
   .card.card-horizontal .card-thumbnail {
-    flex: 1 0 50%; }
+    flex: 1 0 50%;
+    max-width: 26.8rem; }
     .card.card-horizontal .card-thumbnail img {
       object-fit: cover;
       aspect-ratio: 1 / 1; }
