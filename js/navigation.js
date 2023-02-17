@@ -1,12 +1,29 @@
 let navOpen = false;
-let ready = true;
+let headerHidden = false;
+let clickActionReady = true;
+
+// Catching events
+document.addEventListener("touchstart", documentTouchStartHandler);
+document.addEventListener("touchmove", documentTouchMoveHandler);
+document.addEventListener("click", documentClickHandler);
+document.addEventListener("scroll", documentScrollHandler);
+
+document.querySelectorAll(".nav-sub").forEach((subMenu) => {
+  subMenu.addEventListener("click", navSubClickHandler);
+});
+
+function toggleHeader() {
+  headerHidden = !headerHidden;
+
+  updateHeader();
+}
 
 function toggleNav() {
-  if (!ready) {
+  if (!clickActionReady) {
     return;
   }
 
-  handleClick();
+  clickActionTimeout();
 
   navOpen = !navOpen;
   updateNav();
@@ -20,12 +37,65 @@ function updateNav() {
   }
 }
 
-document.addEventListener("click", (e) => {
-  if (!ready) {
+function updateHeader() {
+  if (headerHidden) {
+    document.querySelector("header").classList.add("hidden");
+  } else {
+    document.querySelector("header").classList.remove("hidden");
+  }
+}
+
+function clickActionTimeout() {
+  clickActionReady = false;
+
+  setTimeout(() => {
+    clickActionReady = true;
+  }, 100);
+}
+
+const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach(navLink => {
+  navLink.addEventListener("click", (e) => {
+    toggleNav();
+  });
+});
+
+let touchStartY = 0;
+const dstThreshold = 20;
+
+function documentTouchStartHandler(e) {
+  touchStartY = e.touches[0].clientY;
+}
+
+function documentTouchMoveHandler(e) {
+  const touchCurrentY = e.touches[0].clientY;
+  const dst = touchCurrentY - touchStartY;
+
+  if (dst > dstThreshold) {
+    if (headerHidden) {
+      toggleHeader();
+    }
+
+    if (navOpen) {
+      toggleNav();
+    }
+  } else if (dst < -dstThreshold) {
+    if (!headerHidden && window.scrollY > 10) {
+      toggleHeader();
+    }
+
+    if (navOpen) {
+      toggleNav();
+    }
+  }
+}
+
+function documentClickHandler() {
+  if (!clickActionReady) {
     return;
   }
 
-  handleClick();
+  clickActionTimeout();
 
   const mouse = {
     x: e.clientX,
@@ -63,43 +133,34 @@ document.addEventListener("click", (e) => {
       updateNav();
     }
   }
-});
-
-document.querySelectorAll(".nav-sub").forEach((subMenu) => {
-  subMenu.addEventListener("click", (e) => {
-    if (!ready) {
-      return;
-    }
-
-    handleClick();
-
-    const targetMenuId = e.currentTarget.dataset.target;
-
-    document.querySelectorAll(".dropdown-menu").forEach((dropdownMenu) => {
-      if (dropdownMenu.id == targetMenuId) {
-        if (dropdownMenu.classList.contains("open")) {
-          dropdownMenu.classList.remove("open");
-          return;
-        }
-        dropdownMenu.classList.add("open");
-      } else {
-        dropdownMenu.classList.remove("open");
-      }
-    });
-  });
-});
-
-function handleClick() {
-  ready = false;
-
-  setTimeout(() => {
-    ready = true;
-  }, 100);
 }
 
-const navLinks = document.querySelectorAll(".nav-link");
-navLinks.forEach(navLink => {
-  navLink.addEventListener("click", (e) => {
-    toggleNav();
+function navSubClickHandler(e) {
+  if (!clickActionReady) {
+    return;
+  }
+
+  clickActionTimeout();
+
+  const targetMenuId = e.currentTarget.dataset.target;
+
+  document.querySelectorAll(".dropdown-menu").forEach((dropdownMenu) => {
+    if (dropdownMenu.id == targetMenuId) {
+      if (dropdownMenu.classList.contains("open")) {
+        dropdownMenu.classList.remove("open");
+        return;
+      }
+      dropdownMenu.classList.add("open");
+    } else {
+      dropdownMenu.classList.remove("open");
+    }
   });
-});
+}
+
+function documentScrollHandler(e) {
+  if (window.scrollY <= 10) {
+    if (headerHidden) {
+      toggleHeader();
+    }
+  }
+}

@@ -6,6 +6,15 @@
   background-color: var(--color-light-1);
 
   z-index: 10;
+
+  transform: translateY(0);
+  transition: all .2s;
+
+  &.hidden {
+    @include respond(sm) {
+      transform: translateY(-100%);
+    }
+  }
 }
 
 .brand {
@@ -182,7 +191,7 @@
 
   transform: translateY(5rem);
   transform-origin: top;
-  transition: all 0.3s;
+  transition: all 0.4s;
 
   overflow-y: auto;
 
@@ -209,7 +218,7 @@
     &.open {
       top: 0;
       transform: translateX(0);
-      max-height: 1000rem;
+      max-height: 500rem;
     }
   }
 }
