@@ -61,10 +61,13 @@
       top: 100%;
       left: 0;
       width: 100%;
-      overflow-y: auto;
       font-size: 2rem;
       //opacity: 0;
       z-index: 9;
+
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-height: 80vh;
 
       transform-origin: top right;
       border-radius: 0;
@@ -168,38 +171,44 @@
   display: flex;
   background-color: var(--color-light-1);
   border: 1px solid var(--color-light-2);
-  border-top: 0;
   width: 20rem;
 
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
   top: calc(100% + 1px);
 
   left: 0;
   //top: 100%;
   opacity: 0;
 
-  transform: scaleY(0);
+  transform: translateY(5rem);
   transform-origin: top;
   transition: all 0.3s;
 
+  overflow-y: auto;
+
   &.open {
     opacity: 1;
-    transform: scaleY(1);
+    max-height: 80vh;
+    transform: translateY(1rem);
   }
 
   @include respond(sm) {
     position: relative;
     width: 100%;
-    height: auto;
     max-height: 0;
     transform-origin: top;
-    padding-left: 5rem;
+    padding-inline: 5rem;
+
+    overflow-y: hidden;
 
     border: none;
     border-bottom: 1px solid var(--color-light-2);
 
+    transform: translateX(5rem);
+
     &.open {
       top: 0;
+      transform: translateX(0);
       max-height: 1000rem;
     }
   }

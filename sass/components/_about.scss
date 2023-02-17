@@ -3,4 +3,21 @@
 
     &-image {
     }
+
+    &-text {
+        margin-block: 1rem;
+        line-height: 1.7;
+    }
+}
+
+.avatar {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;    
+    align-self: flex-start;
+    overflow: hidden;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
 }

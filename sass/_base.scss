@@ -33,7 +33,7 @@ html {
 body {
   //display: grid;
   color: var(--color-dark-2);
-  padding-top: 5rem; // make space after the header
+  padding-top: 6rem; // make space after the header
 }
 
 body,
@@ -105,10 +105,16 @@ main {
 }
 
 .hr {
-  &-3 {
+  margin-block: 6rem;
+  border: 0;
+  border-bottom: 1px solid var(--color-light-2);
+
+  @include respond(md) {
     margin-block: 3rem;
-    border: 0;
-    border-bottom: 1px solid var(--color-light-2);
+  }
+
+  @include respond(sm) {
+    margin-block: 1rem 2rem;
   }
 }
 
@@ -311,4 +317,21 @@ main {
 
 .social-nav-icon {
   max-width: 3rem;
+}
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, .15);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, .5);
 }

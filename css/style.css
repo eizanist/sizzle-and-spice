@@ -25,7 +25,7 @@ html {
 
 body {
   color: var(--color-dark-2);
-  padding-top: 5rem; }
+  padding-top: 6rem; }
 
 body,
 input,
@@ -81,10 +81,16 @@ main {
     color: var(--color-light-1);
     background: var(--color-link); }
 
-.hr-3 {
-  margin-block: 3rem;
+.hr {
+  margin-block: 6rem;
   border: 0;
   border-bottom: 1px solid var(--color-light-2); }
+  @media (max-width: 56.25em) {
+    .hr {
+      margin-block: 3rem; } }
+  @media (max-width: 37.5em) {
+    .hr {
+      margin-block: 1rem 2rem; } }
 
 .rule-bottom {
   border-bottom: 1px solid var(--color-light-2); }
@@ -242,6 +248,20 @@ main {
 
 .social-nav-icon {
   max-width: 3rem; }
+
+::-webkit-scrollbar {
+  width: .5rem; }
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 5px; }
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px; }
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5); }
 
 section, footer {
   margin-block: 6rem;
@@ -542,9 +562,11 @@ section, footer {
         top: 100%;
         left: 0;
         width: 100%;
-        overflow-y: auto;
         font-size: 2rem;
         z-index: 9;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 80vh;
         transform-origin: top right;
         border-radius: 0;
         transition: all 0.3s ease-out;
@@ -616,30 +638,33 @@ section, footer {
   display: flex;
   background-color: var(--color-light-1);
   border: 1px solid var(--color-light-2);
-  border-top: 0;
   width: 20rem;
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
   top: calc(100% + 1px);
   left: 0;
   opacity: 0;
-  transform: scaleY(0);
+  transform: translateY(5rem);
   transform-origin: top;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  overflow-y: auto; }
   .dropdown-menu.open {
     opacity: 1;
-    transform: scaleY(1); }
+    max-height: 80vh;
+    transform: translateY(1rem); }
   @media (max-width: 37.5em) {
     .dropdown-menu {
       position: relative;
       width: 100%;
-      height: auto;
       max-height: 0;
       transform-origin: top;
-      padding-left: 5rem;
+      padding-inline: 5rem;
+      overflow-y: hidden;
       border: none;
-      border-bottom: 1px solid var(--color-light-2); }
+      border-bottom: 1px solid var(--color-light-2);
+      transform: translateX(5rem); }
       .dropdown-menu.open {
         top: 0;
+        transform: translateX(0);
         max-height: 1000rem; } }
 
 .dropdown-list {
@@ -698,10 +723,23 @@ section, footer {
 
 .hero {
   background-color: var(--color-light-2);
-  padding-bottom: 5rem; }
+  padding-block: 6rem;
+  padding-bottom: 8rem; }
 
 .about {
   background-color: var(--color-light-2); }
+  .about-text {
+    margin-block: 1rem;
+    line-height: 1.7; }
+
+.avatar {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  align-self: flex-start;
+  overflow: hidden; }
+  .avatar img {
+    height: 100%;
+    object-fit: cover; }
 
 .card .card-rating {
   display: flex;
