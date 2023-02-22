@@ -1,19 +1,56 @@
 .about {
     background-color: var(--color-light-2);
 
+    .avatar {
+        flex: 1 0 20%;
+        margin-inline: auto;;
+    }
+
+    &-images {
+        flex: 1 0 40%;
+        line-height: 0;
+
+        @include respond(md) {
+            width: 100%;
+        }
+    }
+
     &-image {
+    }
+
+    &-body {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-title {
+        @include respond(md) {
+            text-align: center;
+        }
+    }
+
+    &-social-nav {
+        margin-top: auto;
+
+        @include respond(md) {
+            margin-inline: auto;
+        }
     }
 
     &-text {
         margin-block: 1rem;
         line-height: 1.7;
+
+        p {
+            margin-bottom: 2rem;
+        }
     }
 }
 
 .avatar {
     aspect-ratio: 1 / 1;
     border-radius: 50%;    
-    align-self: flex-start;
     overflow: hidden;
 
     img {

@@ -13,6 +13,7 @@
   &.hidden {
     @include respond(sm) {
       transform: translateY(-100%);
+      pointer-events: none;
     }
   }
 }
@@ -109,6 +110,8 @@
     display: block;
     transition: all 0.3s ease-out;
     color: var(--color-dark-1);
+    font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
 
     padding: 3rem;
@@ -194,11 +197,13 @@
   transition: all 0.4s;
 
   overflow-y: auto;
+  pointer-events: none;
 
   &.open {
     opacity: 1;
     max-height: 80vh;
     transform: translateY(1rem);
+    pointer-events: auto;
   }
 
   @include respond(sm) {

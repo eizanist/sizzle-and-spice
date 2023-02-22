@@ -56,7 +56,13 @@ function clickActionTimeout() {
 const navLinks = document.querySelectorAll(".nav-link");
 navLinks.forEach(navLink => {
   navLink.addEventListener("click", (e) => {
+    if (!clickActionReady) {
+      return;
+    }
+    clickActionTimeout();
+    
     toggleNav();
+    document.querySelector(".dropdown-menu.open").classList.remove("open");
   });
 });
 
@@ -90,7 +96,7 @@ function documentTouchMoveHandler(e) {
   }
 }
 
-function documentClickHandler() {
+function documentClickHandler(e) {
   if (!clickActionReady) {
     return;
   }

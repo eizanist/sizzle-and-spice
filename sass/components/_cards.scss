@@ -7,18 +7,45 @@
   }
 
   .card-thumbnail {
-      aspect-ratio: 1 / 1;
-      line-height: 0;
+    aspect-ratio: 1 / 1;
+    line-height: 0;
 
-      img {
-        height: 100%;
-      }
+    transition: opacity 0.2s;
+    flex: 1 1 auto;
+
+    img {
+      height: 100%;
     }
+  }
 
   &.card-hero {
     position: relative;
 
     .card-thumbnail {
+      overflow: hidden;
+
+      img {
+        transform: scale(1) rotate(0);
+        transition: transform 1s ease-in-out, opacity 0.3s ease-out;
+      }
+    }
+
+    .card-caption {
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      .card-thumbnail {
+        img {
+          opacity: 0.8;
+          transform: scale(1.2) rotate(2deg);
+        }
+      }
+    }
+
+    .card-thumbnail {
+      aspect-ratio: 0.85;
+
       @include respond(sm) {
         aspect-ratio: 2 / 1;
       }
@@ -33,6 +60,7 @@
       padding: 1rem 2rem;
       margin: 0;
       text-transform: uppercase;
+      font-weight: 100;
 
       transform: translate(-50%, 50%);
     }
@@ -42,6 +70,19 @@
 
       .card-caption {
         text-align: center;
+      }
+    }
+  }
+
+  &.card-horizontal,
+  &.card-vertical {
+    &:hover {
+      .card-caption {
+        text-decoration: underline;
+      }
+
+      .card-thumbnail {
+        opacity: 0.8;
       }
     }
   }
@@ -69,10 +110,10 @@
       margin-bottom: 1rem;
     }
 
-    .card-thumbnail {    
+    .card-thumbnail {
       flex: 1 0 50%;
       max-width: 26.8rem;
-        
+
       img {
         object-fit: cover;
         aspect-ratio: 1 / 1;
@@ -103,18 +144,12 @@
 
     .card-caption {
       margin-bottom: 1rem;
-      text-align: center;
+      font-size: 1.6rem;
     }
 
     .card-rating {
       justify-content: center;
       margin-block: 0 1rem;
-    }
-
-    @include respond(sm) {
-      .card-thumbnail {
-        height: 26.8rem;
-      }
     }
 
     .stars-background,
@@ -150,34 +185,35 @@
       margin: 0;
       color: var(--color-light-1);
       padding: 1rem;
-      background-color: rgba(178, 72, 49, .5);
+      background-color: rgba(178, 72, 49, 0.5);
       overflow: hidden;
       text-align: center;
       text-transform: uppercase;
 
-      transition: all .3s;
+      transition: all 0.3s;
     }
   }
 }
 
 .stars-background,
 .stars-fill {
-  height: 3rem;
+  height: var(--card-star-width-lg);
   background-size: contain;
-  background-size: 3rem 3rem;
+  background-size: var(--card-star-width-lg) var(--card-star-width-lg);
   background-repeat: repeat-x;
 
   @include respond(sm) {
-    background-size: 2rem 2rem;
+    height: var(--card-star-width-sm);
+    background-size: var(--card-star-width-sm) var(--card-star-width-sm);
   }
 }
 
 .stars-background {
   background-image: url("../img/svg/star-empty.svg");
-  width: 15rem;
+  width: calc(var(--card-star-width-lg) * 5);
 
   @include respond(sm) {
-    width: 10rem;
+    width: calc(var(--card-star-width-sm) * 5);
   }
 }
 

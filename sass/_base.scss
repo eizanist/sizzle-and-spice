@@ -20,6 +20,9 @@
   --color-light-1: #ffffff;
   --color-light-2: #e9e1d7;
 
+  --card-star-width-lg: 2.5rem;
+  --card-star-width-sm: 2rem;
+
   --font-primary: "Signika", sans-serif;
   --font-logo: "Cuprum";
   --font-signature: "Mr De Haviland";
@@ -73,48 +76,49 @@ main {
   padding-inline: var(--container-margin);
 }
 
-.footer {
-  margin-bottom: 0;
-  
-  @include respond(sm) {
-    text-align: center;
-  }
-
-  &-copy {
-    @include respond(sm) {
-      order: 2;
-      align-self: center;
-      margin-top: 3rem;
-    }
-  }
-}
-
 .btn {
+  position: relative;
   text-decoration: none;
   display: block;
   width: fit-content;
   padding: 1rem 3rem;
-  background-color: transparent;
-  border: 2px solid var(--color-link);
-  color: var(--color-link);
+  color: var(--color-light-1);
+  background-color: var(--color-dark-1);
+  border: none;
   font-weight: bold;
   text-transform: uppercase;
 
   transition: all 0.3s;
 
   &:hover {
-    color: var(--color-light-1);
-    background: var(--color-link);
+    transform: translate(-1rem, 1rem);
+  }
+
+  &:hover::before {
+    transform: translate(1rem, -1rem);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -1rem;
+    top: 1rem;
+    border: 2px solid var(--color-dark-1);
+    z-index: -1;
+
+    transition: all 0.3s;
   }
 }
 
 .hr {
-  margin-block: 6rem;
+  margin-block: 3rem;
   border: 0;
   border-bottom: 1px solid var(--color-light-2);
 
   @include respond(md) {
-    margin-block: 3rem;
+    margin-block: 2rem;
   }
 
   @include respond(sm) {
@@ -324,18 +328,22 @@ main {
 }
 
 ::-webkit-scrollbar {
-  width: .5rem;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, .15);
+  background-color: rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  display: none !important;
 }

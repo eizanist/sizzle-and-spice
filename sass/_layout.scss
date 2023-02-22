@@ -2,3 +2,15 @@ section, footer {
     margin-block: 6rem;
     padding-block: 3rem;
   }
+
+ul {
+  &.column {
+    &-2 {
+      columns: 2;
+
+      @include respond(sm) {
+        columns: 1;
+      }
+    }
+  }
+}
